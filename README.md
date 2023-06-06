@@ -4,8 +4,8 @@ Backend do projeto da cadeira de Inteligência Artificial do 4º período do cur
 
 ## 💻 Pré-requisitos
 
-- Git
-- Python (3.7)
+- [Git](https://git-scm.com)
+- [Python 3.7](https://apps.microsoft.com/store/detail/python-37/9NJ46SX7X90P?hl=pt-br&gl=br)
 - [Modelo](https://mega.nz/file/l8cXBTDb#n7kK1L9GwDPjrBZKHmmOziI4ZSwWMAEfTwJUUKDk40o)
 
 ## 🚀 Instalando
