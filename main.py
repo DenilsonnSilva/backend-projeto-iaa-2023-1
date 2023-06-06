@@ -5,7 +5,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 
 app = Flask(__name__)
-model = load_model("path/to/your/model.h5")
+model = load_model("model.h5")
 
 
 def preprocess(img_array):
