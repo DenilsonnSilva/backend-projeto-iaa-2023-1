@@ -15,3 +15,11 @@ def preprocess(img_array):
     img_normalized = img_resized / 255.0
     img_expanded = np.expand_dims(img_normalized, axis=0)
     return img_expanded
+
+def get_class_info(prediction):
+    classes = {
+        0: ("class_id_0", "Carro"),
+        1: ("class_id_1", "Moto"),
+        2: ("class_id_2", "Caminhão"),
+    }
+    return classes[prediction]
