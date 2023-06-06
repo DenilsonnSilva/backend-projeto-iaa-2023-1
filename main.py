@@ -9,3 +9,9 @@ model = load_model("path/to/your/model.h5")
 
 if __name__ == "__main__":
     app.run()
+
+def preprocess(img_array):
+    img_resized = np.array(Image.fromarray(img_array).resize((224, 224)))
+    img_normalized = img_resized / 255.0
+    img_expanded = np.expand_dims(img_normalized, axis=0)
+    return img_expanded
