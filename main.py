@@ -3,8 +3,10 @@ import numpy as np
 from PIL import Image
 from keras.models import load_model
 from keras.preprocessing import image
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = load_model("model.h5")
 
 
@@ -17,9 +19,9 @@ def preprocess(img_array):
 
 def get_class_info(prediction):
     classes = {
-        0: ("class_id_0", "Carro"),
-        1: ("class_id_1", "Moto"),
-        2: ("class_id_2", "Caminhão"),
+        0: ("0", "Carro"),
+        1: ("1", "Moto"),
+        2: ("2", "Caminhão"),
     }
     return classes[prediction]
 
@@ -36,6 +38,19 @@ def predict():
     prediction = model.predict(img_processed)
     class_id, class_name = get_class_info(np.argmax(prediction))
     response = {"class_id": class_id, "class_name": class_name}
+    return jsonify(response)
+
+
+@app.route("/")
+def home():
+    return jsonify({"title": "Hello World!"})
+
+
+@app.route("/teste", methods=["POST"])
+def test():
+    data = request.get_json()
+    message = data.get("message")
+    response = {"result": "success", "message": message}
     return jsonify(response)
 
 
