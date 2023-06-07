@@ -41,18 +41,5 @@ def predict():
     return jsonify(response)
 
 
-@app.route("/")
-def home():
-    return jsonify({"title": "Hello World!"})
-
-
-@app.route("/teste", methods=["POST"])
-def test():
-    data = request.get_json()
-    message = data.get("message")
-    response = {"result": "success", "message": message}
-    return jsonify(response)
-
-
 if __name__ == "__main__":
     app.run()
