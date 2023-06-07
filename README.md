@@ -26,6 +26,8 @@ Instale as dependências do projeto:
 pip install -r requirements.txt
 ```
 
+## ☕ Usando
+
 Inicie o servidor:
 
 ```bash
